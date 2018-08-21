@@ -3,4 +3,6 @@
  * remove -> array.pop()
  */
 
- 123
+class Queue {}
+
+export default Queue;
