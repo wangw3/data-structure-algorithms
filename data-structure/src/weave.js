@@ -25,7 +25,7 @@ import Queue from './queue';
 const weave = (sourceOne, sourceTwo) => {
   const q = new Queue();
 
-  while ((sourceOne.peek()!==undefined) || (sourceTwo.peek()!==undefined)) {
+  while ((sourceOne.peek() !== undefined) || (sourceTwo.peek() !== undefined)) {
     if (sourceOne.peek()) {
       q.add(sourceOne.remove());
     }
