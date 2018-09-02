@@ -8,7 +8,7 @@ const twoSum = (nums, target) => {
   let solution = [];
   nums.forEach((num, i) => {
     let a = nums.indexOf(target - num);
-    if (a !== 0 && a!== i && solution.length!==2) {
+    if (a !== 0 && a !== i && solution.length !== 2) {
       solution.push(i);
       solution.push(a);
     }

@@ -2,19 +2,19 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
+var isValid = function (s) {
     const sArr = [];
     const obj = {
         '}': '{',
         ']': '[',
         ')': '('
     };
-    
+
     const arr = s.split('');
-    
-    arr.forEach((char)=> {
-        obj[char] && (obj[char] === sArr[sArr.length-1]) ?
-            sArr.pop():
+
+    arr.forEach((char) => {
+        obj[char] && (obj[char] === sArr[sArr.length - 1]) ?
+            sArr.pop() :
             sArr.push(char);
 
     });
@@ -25,18 +25,18 @@ var isValid = function(s) {
 //     let map = {};
 //     let hash = {};
 //     let stack = [];
-    
+
 //     map['}']='{';
 //     map[']']='[';
 //     map[')']='(';
-    
+
 //     hash['{']=0;
 //     hash['[']=0;
 //     hash['(']=0;
-    
-    
+
+
 //     for(let i=0;i<s.length;i++){
-        
+
 //         if (s[i] in hash){
 //             stack.push(s[i]);
 //         }else {
@@ -49,7 +49,7 @@ var isValid = function(s) {
 //             }
 //         }
 //     }
-    
+
 //     if (stack.length>0) {
 //         return false;
 //     }else{

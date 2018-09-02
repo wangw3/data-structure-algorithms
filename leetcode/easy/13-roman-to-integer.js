@@ -1,4 +1,4 @@
-var romanToInt = function(s) {
+var romanToInt = function (s) {
     const obj = {
         'I': 1,
         'V': 5,
@@ -9,13 +9,13 @@ var romanToInt = function(s) {
         'M': 1000
     };
     let arr = s.split('');
-    return arr.reduce((sum,value,index) => {
+    return arr.reduce((sum, value, index) => {
         let mul;
-        if(obj[value] < obj[arr[index+1]]) {
+        if (obj[value] < obj[arr[index + 1]]) {
             mul = -1;
         }
         else mul = 1;
-        
+
         return sum + mul * obj[value];
     }, 0);
 };
