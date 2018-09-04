@@ -1,13 +1,13 @@
 /**
  * https://www.jianshu.com/p/70c11dc8ec98
  */
-function HashTable() {
-
-  this.storage = []
-  this.count = 0
-  this.limit = 8
-
-  HashTable.prototype.isPrime = function (num) {
+class HashTable {
+  constructor() {
+    this.storage = []
+    this.count = 0
+    this.limit = 8
+  }
+  isPrime(num) {
     var temp = parseInt(Math.sqrt(num))
     for (var i = 2; i <= temp; i++) {
       if (num % i == 0) {
@@ -16,15 +16,13 @@ function HashTable() {
     }
     return true
   }
-
-  HashTable.prototype.getPrime = function (num) {
+  getPrime(num) {
     while (!isPrime(num)) {
       num++
     }
     return num
   }
-
-  HashTable.prototype.hashFunc = function (str, max) {
+  hashFunc(str, max) {
     var hashCode = 0
     for (var i = 0; i < str.length; i++) {
       hashCode = 37 * hashCode + str.charCodeAt(i)
@@ -32,8 +30,7 @@ function HashTable() {
     hashCode = hashCode % max
     return hashCode
   }
-
-  HashTable.prototype.put = function (key, value) {
+  put(key, value) {
     var index = this.hashFunc(key, this.limit)
     var bucket = this.storage[index]
     if (bucket === undefined) {
@@ -58,8 +55,7 @@ function HashTable() {
       }
     }
   }
-
-  HashTable.prototype.get = function (key) {
+  get(key) {
     var index = this.hashFunc(key, this.limit)
     var bucket = this.storage[index]
     if (bucket == null) {
@@ -73,8 +69,7 @@ function HashTable() {
     }
     return null
   }
-
-  HashTable.prototype.remove = function (key) {
+  remove(key) {
     var index = this.hashFunc(key, this.limit)
     var bucket = this.storage[index]
     if (bucket == null) {
@@ -94,13 +89,13 @@ function HashTable() {
     }
     return null
   }
-  HashTable.prototype.isEmpty = function () {
+  isEmpty() {
     return this.count == 0
   }
-  HashTable.prototype.size = function () {
+  size() {
     return this.count
   }
-  HashTable.prototype.resize = function (newLimit) {
+  resize(newLimit) {
     var oldStorage = this.storage
     this.limit = newLimit
     this.count = 0
